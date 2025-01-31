@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="index.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <div class="container"> 
+        <div class="lefthalf">
+            <div class="searchbar">
+                <div class="logo">
+                    <h3 style="font-family: cursive; ; margin-left: 40px;">Exp - Tracker</h3>
+                </div>
+                <div class="search">
+                    <form action="" class="search-bar">
+                        <input type="search" name="search" pattern=".*\S.*" required>
+                        <button class="search-btn" type="submit">
+                            <span>Search</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="dashboard">
+                <div class="dashboard1">
+                    <h1 style="border: 0px solid black; text-align: center; margin-top: 5%; margin-right: 160px;">$230000</h1>
+                    <br>
+                    <h4 style="text-align: center; margin-top: -10%; margin-right: 160px;">Deposit : $ 12000</h4>
+                    <br>
+                    <h5 style="margin-left: 20px;margin-top: -10%; color: lightseagreen; ">+7.0%($700)</h5>
+                    <br>
+                    <!-- HTML !-->
+                    <button class="button-18" role="button">Add funds + </button>
+                </div>
+                <div class="dashboard2">
+                    <h2>Weekly Payments</h2>
+                    <div class="chart-container">
+                        <canvas id="paymentChart"></canvas>
+                    </div>
+                </div>
+                <script>
+                    var ctx = document.getElementById("paymentChart").getContext("2d");
+                
+                    var paymentChart = new Chart(ctx, {
+                        type: "bar",
+                        data: {
+                            labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                            datasets: [{
+                                label: "Payments (₹)",
+                                data: [500, 700, 300, 800, 650, 900], // Change values as needed
+                                backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56", "#4BC0C0", "#9966FF", "#FF9F40"],
+                                borderColor: "black",
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            scales: {
+                                y: {
+                                    beginAtZero: true,
+                                    ticks: {
+                                        stepSize: 200
+                                    }
+                                }
+                            }
+                        }
+                    });
+                </script>
+                
+                
+            </div>
+            <div class="expenselist">
+                <div class="expense-item">
+                    <img src="icon1.png" alt="Balance">
+                    <button class="button-2">Balance</button>
+                </div>
+                <div class="expense-item">
+                    <img src="icon2.png" alt="Home">
+                    <button class="button-2">Home</button>
+                </div>
+                <div class="expense-item">
+                    <img src="icon3.png" alt="Transfer">
+                    <button class="button-2">Transfer</button>
+                </div>
+                <div class="expense-item">
+                    <img src="icon4.png" alt="Shopping">
+                    <button class="button-2">Shopping</button>
+                </div>
+                <div class="expense-item">
+                    <img src="icon5.png" alt="Electricity">
+                    <button class="button-2">Electricity</button>
+                </div>
+                <div class="expense-item">
+                    <img src="icon6.png" alt="Movies">
+                    <button class="button-2">Movies</button>
+                </div>
+            </div>
+            
+            <div class="cards">
+                <div class="card1">
+                    <div class="Income">
+                        <img src="increment.png" width="100%">
+                        <br>
+                        <h3 style="text-align: center; color: greenyellow; margin-top: -5px;">$20000
+                            <span style="text-align: center;margin-top: -100px;">Income</span>
+                        </h3>
+                    </div>
+                    <div class="Expense">
+                        <img src="decrement.png" width="100%" height="60%">
+                        <br>
+                        <h3 style="text-align: center; color: red; margin-top: -5px;"> $7500 <span>Expense</span></h3>
+                    </div>
+                </div>
+                <div class="card1">
+                    <h3 style="text-align: left;"><b>Send Money :</b></h3>
+                    <ul>
+                        <li><b style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Anurag</b></li>
+                        <li><b style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Prateek</b></li>
+                        <li><b style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Trisha</b></li>
+                        
+                    </ul>
+                </div>
+                <div class="card1">
+                    <h3 style="margin-left: 10px;">Add a bank account <b>+</b> </h3>
+                    <ul>
+                        <li>Canara bank</li>
+                        <li>HDFC</li>
+                        <li>SBI</li>
+                        <li>PNB</li>
+                    </ul>
+                </div>
+                
+                <div class="card1">
+                    <h3 style="margin-left: 10px;">Reminders</h3>
+                    <ul>
+                        <li>Electricity Bill : 23 May </li>
+                        <li>Home loan : 19 Dec </li>
+                        <li>Rent : 1 Jan </li>
+                    </ul>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="righthalf">
+            <div class="recent">
+                <i class='fas fa-bell' style='font-size:20px; margin-left:380px; margin-top: 20px; color: burlywood;' ></i>
+                <i class='fas fa-user-circle' style='font-size:20px;margin-top:10px; padding-left: 15px;'></i>
+            </div>
+            <div class="todopayment">
+                <h2 style="font-family: 'Times New Roman', Times, serif; font-weight: bold; padding-left: 30px;">My Transaction</h2>
+                <div class="user-info">
+                    <i class="fa-solid fa-user"></i>
+                    <div class="details">
+                        <span>Trisha</span>
+                        <span class="date">15 March</span>
+                    </div>
+                    <span class="price">₹5000</span>
+                </div>
+                <br>
+                <div class="user-info">
+                    <i class="fa-solid fa-user"></i>
+                    <div class="details">
+                        <span>Sahithi</span>
+                        <span class="date">28 April</span>
+                    </div>
+                    <span class="price">₹4000</span>
+                </div>  
+                <br>
+                <div class="user-info">
+                    <i class="fa-solid fa-user"></i>
+                    <div class="details">
+                        <span>Rahul</span>
+                        <span class="date">28 April</span>
+                    </div>
+                    <span class="price">₹8000</span>
+                </div> 
+                <br> 
+                <div class="user-info">
+                    <i class="fa-solid fa-user"></i>
+                    <div class="details">
+                        <span>Prateek</span>
+                        <span class="date">15 March</span>
+                    </div>
+                    <span class="price">₹2000</span>
+                </div>                
+                <br> 
+                <div class="user-info">
+                    <i class="fa-solid fa-user"></i>
+                    <div class="details">
+                        <span>Anuja</span>
+                        <span class="date">15 January</span>
+                    </div>
+                    <span class="price">₹2250</span>
+                </div>
+                <br> 
+                <div class="user-info">
+                    <i class="fa-solid fa-user"></i>
+                    <div class="details">
+                        <span>Anurag</span>
+                        <span class="date">21 May</span>
+                    </div>
+                    <span class="price">₹3350</span>
+                </div>
+                <div class="bottom-section">
+                    <h1 style="margin-left: 50px;font-size: larger; font-weight: bolder;">My Card</h1>
+                    <img src="carddd.png" alt="Transaction Image" class="bottom-image">
+                    <div class="card-details">
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+   
+</body>
+</html>
